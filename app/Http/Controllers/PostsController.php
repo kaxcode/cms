@@ -13,9 +13,9 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return "hello kenia!";
+        return "the number is ". $id;
     }
 
     /**
