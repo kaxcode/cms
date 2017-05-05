@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
+@section('content')
 
-    <title>Post Show</title>
+    <h1>Post Page {{$topic}} {{$name}} {{$id}}</h1>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@endsection
 
-</head>
+@section('footer')
 
-<body>
-
-<div class="container">
-
-    <h1>Post {{$topic}} {{$name}} {{$id}}</h1>
-
-</div>
-
-</body>
-
-</html>
+@stop

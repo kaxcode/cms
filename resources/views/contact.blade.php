@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
+@section('content')
 
-    <title>Contact Us</title>
+    <h1>New Contact Page</h1>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@endsection
 
-</head>
+@section('footer')
 
-<body>
+    <script>alert("Hello Visitor")</script>
 
-    <div class="container">
-
-        <h1>Contact Page</h1>
-
-    </div>
-
-</body>
-
-</html>
+@stop
