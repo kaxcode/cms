@@ -49,7 +49,7 @@ class PostsController extends Controller
     public function show($id)
     {
         //
-        return "This is the show method yayyyy" . $id;
+        return "This is the show method " . $id;
     }
 
     /**
@@ -90,4 +90,12 @@ class PostsController extends Controller
     {
         return view('contact');
     }
+
+    public function show_post($topic, $name, $id)
+    {
+//        return view('post')->with('id', $id);
+        return view('post', compact('topic','name', 'id'));
+    }
+
+
 }
