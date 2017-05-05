@@ -36,3 +36,6 @@ Route::get('/', function () {
 
 
 Route::resource('posts', 'PostsController');
+
+
+Route::get('/contact', 'PostsController@contact');
