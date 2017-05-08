@@ -120,7 +120,7 @@
 //        Post::where('is_admin', 0)->delete();
 //
 //    });
-
+//
 //    Route::get('/softdelete',function(){
 //
 //        Post::find(8)->delete();
@@ -138,8 +138,10 @@
 //    });
 
 
-Route::get('/restore', function(){
-   Post::withTrashed()->where('is_admin', 0)->restore();
+//Route::get('/restore', function(){
+//   Post::withTrashed()->where('is_admin', 0)->restore();
+//});
 
-
-});
+    Route::get('/forcedelete', function() {
+       Post::withTrashed()->where('is_admin', 0)->forceDelete();
+    });
