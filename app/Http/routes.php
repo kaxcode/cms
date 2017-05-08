@@ -99,10 +99,10 @@
 //    });
 
 
-    Route::get('/create', function() {
-
-       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
-    });
+//    Route::get('/create', function() {
+//
+//       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
+//    });
 
 //    Route::get('/update', function() {
 //       Post::where('id', 6)-> where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor!']);
@@ -121,9 +121,18 @@
 //
 //    });
 
-    Route::get('/softdelete',function(){
-
-        Post::find(8)->delete();
-
-
-    });
+//    Route::get('/softdelete',function(){
+//
+//        Post::find(8)->delete();
+//
+//
+//    });
+//
+//    Route::get('/readsoftdelete',function(){
+//
+//        $post = Post::onlyTrashed()->where('id', 8)->get();
+////        $post = Post::find(8);
+////
+//        return $post;
+//
+//    });
