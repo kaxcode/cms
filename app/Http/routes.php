@@ -136,3 +136,10 @@
 //        return $post;
 //
 //    });
+
+
+Route::get('/restore', function(){
+   Post::withTrashed()->where('is_admin', 0)->restore();
+
+
+});
