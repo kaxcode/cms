@@ -16,11 +16,26 @@ Route::get('/', function () {
 });
 
 
-Route::get('/insert', function (){
+//Route::get('/insert', function (){
+//
+//   DB::insert('insert into posts(title,content) values(?, ?)', ['PHP with Laravel', 'Laravel is the best thing that has happened to PHP']);
+//
+//});
 
-   DB::insert('insert into posts(title,content) values(?, ?)', ['PHP with Laravel', 'Laravel is the best thing that has happened to PHP']);
 
-});
+//  Route::get('/read', function (){
+//    $results = DB::select('select * from posts where id = ?', [1]);
+//
+//    foreach($results as $post) {
+//        return $post->title;
+//    }
+//  });
+
+  Route::get('/update', function (){
+      $updated = DB::update('update posts set title = "Updated title" where id = ?', [1]);
+
+      return $updated;
+  });
 
 Route::resource('posts', 'PostsController');
 
