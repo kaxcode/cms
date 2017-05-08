@@ -99,7 +99,24 @@
 //    });
 
 
-    Route::get('/create', function() {
+//    Route::get('/create', function() {
+//
+//       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
+//    });
 
-       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
+//    Route::get('/update', function() {
+//       Post::where('id', 6)-> where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor!']);
+//    });
+
+//    Route::get('/delete', function() {
+//        $post = Post::find(4);
+//        $post->delete();
+//    });
+
+    Route::get('/delete2', function(){
+
+        Post::destroy([6,7]);
+
+        Post::where('is_admin', 0)->delete();
+
     });
