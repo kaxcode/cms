@@ -99,10 +99,10 @@
 //    });
 
 
-//    Route::get('/create', function() {
-//
-//       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
-//    });
+    Route::get('/create', function() {
+
+       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
+    });
 
 //    Route::get('/update', function() {
 //       Post::where('id', 6)-> where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor!']);
@@ -113,10 +113,17 @@
 //        $post->delete();
 //    });
 
-    Route::get('/delete2', function(){
+//    Route::get('/delete2', function(){
+//
+//        Post::destroy([6,7]);
+//
+//        Post::where('is_admin', 0)->delete();
+//
+//    });
 
-        Post::destroy([6,7]);
+    Route::get('/softdelete',function(){
 
-        Post::where('is_admin', 0)->delete();
+        Post::find(8)->delete();
+
 
     });
