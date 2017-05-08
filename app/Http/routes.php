@@ -16,11 +16,11 @@
     });
 
 
-    //Route::get('/insert', function (){
-    //
-    //   DB::insert('insert into posts(title,content) values(?, ?)', ['PHP with Laravel', 'Laravel is the best thing that has happened to PHP']);
-    //
-    //});
+//    Route::get('/insert', function (){
+//
+//       DB::insert('insert into posts(title,content) values(?, ?)', ['Laravel is awesome', 'Laravel is the best thing that has happened to PHP']);
+//
+//    });
     //  Route::get('/read', function (){
     //    $results = DB::select('select * from posts where id = ?', [1]);
     //
@@ -52,14 +52,26 @@
 //        }
 //    });
 
-    Route::get('/find', function () {
-        $post = Post::find(4);
-        return $post->title;
-    });
+//    Route::get('/find', function () {
+//        $post = Post::find(4);
+//        return $post->title;
+//    });
 
+//  |--------------------------------------------------------------------------
+//  | RESOURCES AND USING PARAMS
+//  |--------------------------------------------------------------------------
     Route::resource('posts', 'PostsController');
-
     Route::get('/contact', 'PostsController@contact');
-
     Route::get('post/{topic}/{name}/{id}', 'PostsController@show_post');
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | CHAINING
+    |--------------------------------------------------------------------------
+    */
+    Route::get('/findwhere', function () {
+       $posts = Post::where('id', 5)-> orderBy('id', 'desc')->take(1)->get();
+
+       return $posts;
+    });
