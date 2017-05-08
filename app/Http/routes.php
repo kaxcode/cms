@@ -98,13 +98,8 @@
 //        $post->save();
 //    });
 
-    Route::get('/basicinsert4', function(){
 
-        $post = Post::find('4');
+    Route::get('/create', function() {
 
-        $post->title = 'New Eloquent title insert 4';
-
-        $post->content = "Wow Eloquent is really cool, look at this content 4";
-
-        $post->save();
+       Post::create(['title'=>'The Create Method', 'content'=>'Wow I\'m learning a lot about laravel!']);
     });
