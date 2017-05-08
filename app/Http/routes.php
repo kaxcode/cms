@@ -76,12 +76,35 @@
 //       return $posts;
 //    });
 
-    Route::get('/findmore', function () {
-//       $posts = Post::findOrFail(1);
+//    Route::get('/findmore', function () {
+////       $posts = Post::findOrFail(1);
+////
+////       return $posts;
 //
-//       return $posts;
+//        $posts = Post::where('users_count', '<', 50)->firstOrFail();
+//
+//        return $posts;
+//    });
 
-        $posts = Post::where('users_count', '<', 50)->firstOrFail();
 
-        return $posts;
+//    Route::get('/basicinsert', function(){
+//
+//        $post = new Post;
+//
+//        $post->title = 'New Eloquent title insert';
+//
+//        $post->content = "Wow Eloquent is really cool, look at this content";
+//
+//        $post->save();
+//    });
+
+    Route::get('/basicinsert4', function(){
+
+        $post = Post::find('4');
+
+        $post->title = 'New Eloquent title insert 4';
+
+        $post->content = "Wow Eloquent is really cool, look at this content 4";
+
+        $post->save();
     });
