@@ -2,6 +2,7 @@
     use App\Post;
     use App\User;
     use App\Country;
+    use App\Photo;
 
     /*
     |--------------------------------------------------------------------------
@@ -206,5 +207,12 @@
 //    }
 //});
 
+// Polymorphic Relations
+    Route::get('user/{id}/photos', function ($id){
+        $user = User::find($id);
 
+        foreach($user->photos as $photo){
+            return $photo;
+        }
 
+    });
