@@ -165,8 +165,8 @@
 //    Route::get('/post/{id}/user', function ($id){
 //        return Post::find($id)->user->name;
 //    });
-
-    // One to many relationship
+//
+//    // One to many relationship
 //
 //    Route::get('/posts', function (){
 //        $user = User::find(1);
@@ -175,13 +175,23 @@
 //            echo $post->title . "<br>";
 //        }
 //    });
-
- Route::get('/user/{id}/role', function ($id){
-     $user = User::find($id)->roles()->orderBy('id', 'desc')->get();
-
-
-     return $user;
+//
+//    //Many to Many relationships
+//     Route::get('/user/{id}/role', function ($id){
+//         $user = User::find($id)->roles()->orderBy('id', 'desc')->get();
+//
+//
+//     return $user;
 //     foreach ($user->roles as $role) {
-//         return $role->name;
-//     }
- });
+//           return $role->name;
+//      }
+//     });
+
+//    //Accessing the intermediate table(pivot table/role_user table)
+        Route::get('/user/{id}/pivot', function ($id){
+           $user = User::find($id);
+
+           foreach($user->roles as $role) {
+               echo $role->pivot->created_at;
+           }
+        });
