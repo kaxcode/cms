@@ -1,6 +1,7 @@
 <?php
     use App\Post;
     use App\User;
+    use App\Country;
 
     /*
     |--------------------------------------------------------------------------
@@ -196,7 +197,12 @@
 //           }
 //        });
 
-Route::get('/user/country', function(){
+Route::get('/country/{id}/user', function($id){
+    $country = Country::find($id);
 
+
+    foreach($country->posts as $post) {
+        return $post->title;
+    }
 });
 
