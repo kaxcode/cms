@@ -197,12 +197,14 @@
 //           }
 //        });
 
-Route::get('/country/{id}/user', function($id){
-    $country = Country::find($id);
+//Route::get('/country/{id}/post', function($id){
+//    $country = Country::find($id);
+//
+//
+//    foreach($country->posts as $post) {
+//        echo $post->content . "<br>";
+//    }
+//});
 
 
-    foreach($country->posts as $post) {
-        return $post->title;
-    }
-});
 
