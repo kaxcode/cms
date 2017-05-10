@@ -207,12 +207,13 @@
 //    }
 //});
 
-// Polymorphic Relations
-    Route::get('user/{id}/photos', function ($id){
-        $user = User::find($id);
-
-        foreach($user->photos as $photo){
-            return $photo;
-        }
-
-    });
+//// Polymorphic Relations
+//    Route::get('post/{id}/photos', function ($id){
+//        $post = Post::find($id);
+//
+//        foreach ($post->photos as $photo) {
+//            echo $photo->path ."<br>";
+//        }
+//
+//
+//    });

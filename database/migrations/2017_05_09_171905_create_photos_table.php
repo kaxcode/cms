@@ -16,7 +16,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->integer('imageable_id');
-            $table->string('App\User');
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }
